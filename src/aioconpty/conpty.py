@@ -1,15 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-async_conpty.py
-汎用的な asyncio ConPTY ラッパー
+"""Asynchronous wrapper around the Windows ConPTY API.
 
-- ConPTY(擬似コンソール)の生成/破棄/サイズ変更
-- asyncio.StreamReader/StreamWriter 経由での非同期入出力
-- CreateProcessW + STARTUPINFOEX で ConPTY に子プロセスを接続
-- 可能な限り元コードの仕様/挙動を踏襲
+This module provides a high-level interface for creating and interacting with
+Windows pseudo consoles (ConPTY) from asyncio-based applications.
 
-要件: Windows 10 1809+ / Python 3.8+
+Features
+--------
+* Create, resize, and close ConPTY instances.
+* Drive asynchronous I/O via :class:`asyncio.StreamReader` and
+  :class:`asyncio.StreamWriter` objects.
+* Spawn child processes attached to the pseudo console using
+  :func:`CreateProcessW` and :class:`STARTUPINFOEX`.
+
+Requirements
+------------
+* Windows 10 build 1809 or later.
+* Python 3.8 or later.
 """
 
 import os

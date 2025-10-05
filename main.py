@@ -1,6 +1,9 @@
+"""Example script demonstrating how to run a command through AsyncConPTY."""
+
 import sys
 import asyncio
-from async_conpty import AsyncConPTY
+
+from aioconpty import AsyncConPTY
 
 async def run():
     # 単発コマンドで終了させたいなら cmd /c を使う
